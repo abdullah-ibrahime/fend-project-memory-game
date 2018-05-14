@@ -29,3 +29,34 @@ function shuffle(array) {
     return array;
 }
 
+
+document.body.onload = start();//if page loaded start function will run
+
+function start() {
+    cards = shuffle(cards);
+    // remove all exisiting classes from each card
+    for (var i = 0; i < cards.length; i++) {
+        deck.innerHTML = "";
+        [].forEach.call(cards, function(item) {
+            deck.appendChild(item);
+        });
+        cards[i].classList.remove("show", "open", "match", "disabled");
+    }
+    // reset moves
+    move = 0;
+    count.innerHTML = move;
+    // reset rating
+    for (var i = 0; i < star.length; i++) {
+        //star[i].style.color = "#FFD700";
+        star[i].style.visibility = "visible";
+    }
+    //reset timer
+    second = 0;
+    minute = 0;
+    hour = 0;
+    var timer = document.querySelector(".timer");
+    timer.innerHTML = "0 mins 0 secs";
+    clearInterval(interval);
+
+
+}
