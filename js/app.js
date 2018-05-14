@@ -60,3 +60,59 @@ function start() {
 
 
 }
+//Display card
+display = function() {
+    this.classList.toggle('open');
+    this.classList.toggle('show');
+    this.classList.toggle("disabled");
+};
+//open card cant be more than tow and cheack matching if type is same call match function
+function openCard() {
+    opCard.push(this);
+    var len = opCard.length;
+    if (len === 2) {
+        moveCounter();
+        if (opCard[0].type === opCard[1].type) {
+            match();
+
+        } else {
+            unmatch();
+        }
+    }
+};
+//Add class match
+function match() {
+    opCard[0].classList.add("match");
+    opCard[1].classList.add("match");
+    opCard[0].classList.remove("show", "open");
+    opCard[1].classList.remove("show", "open");
+    opCard = [];
+}
+//if unmatch card 
+function unmatch() { 
+    disable();
+    setTimeout(function() {
+        opCard[0].classList.remove("show", "open");
+        opCard[1].classList.remove("show", "open");
+        enable();
+        opCard = [];
+    }, 1100);
+    
+}
+
+function disable() {
+    Array.prototype.filter.call(cards, function(card) {
+        card.classList.add('disabled');
+    });
+}
+
+function enable() {
+    Array.prototype.filter.call(cards, function(card) {
+        card.classList.remove('disabled');
+        for (var i = 0; i < matchCard.length; i++) {
+            matchCard[i].classList.add("disabled");
+        }
+    });
+}
+
+
