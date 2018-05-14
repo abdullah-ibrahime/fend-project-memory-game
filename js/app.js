@@ -205,4 +205,17 @@ modal.classList.remove("show");
   start();
 }
 
+//add event every click on card
+for (var i = 0; i < cards.length; i++) {
+    card = cards[i];
+    card.addEventListener("click", display);//to display card
+    card.addEventListener("click", openCard);//cheacking for matchinf
+    card.addEventListener("click", congratulations);////if all cards matching congratulations show
+};
+//for restart agen 
+restart.addEventListener("click", start);
+
+
+
+
 
