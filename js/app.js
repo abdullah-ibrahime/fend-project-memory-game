@@ -13,6 +13,15 @@ let playAgine=document.getElementById("play-again");//elect play again boton
    console.log(matchCard);
 
 let opCard = []; //Open card arry 
+var second = 0,
+    minute = 0;
+hour = 0;
+var timer = document.querySelector(".timer");
+var interval;
+
+ 
+                                 //functions 
+
 
 
 function shuffle(array) {
@@ -113,6 +122,50 @@ function enable() {
             matchCard[i].classList.add("disabled");
         }
     });
+}
+
+
+//moves counter
+function moveCounter() {
+    move++;
+    count.innerHTML = move;
+    //start timer on first click
+    if (move == 1) {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        startTimer();
+    }
+    if (move >12 && move < 15) {
+        for (i = 0; i < 3; i++) {
+            if (i > 1) {
+                star[i].style.visibility = "collapse";
+            }
+        }
+    } else if (move > 16&& move<19) {
+        for (i = 0; i < 3; i++) {
+            if (i > 0) {
+                star[i].style.visibility = "collapse";
+            }
+        }
+    }
+
+}
+
+//Timer function
+function startTimer() {
+    interval = setInterval(function() {
+        timer.innerHTML = minute + "mins " + second + "secs";
+        second++;
+        if (second == 60) {
+            minute++;
+            second = 0;
+        }
+        if (minute == 60) {
+            hour++;
+            minute = 0;
+        }
+    }, 1000);
 }
 
 
