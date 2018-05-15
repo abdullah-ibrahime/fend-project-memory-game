@@ -17,7 +17,8 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../img/geometry2.png');
+    /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
@@ -32,6 +33,7 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
+
 
 /*
  * Styles for the deck of cards
@@ -74,6 +76,7 @@ h1 {
     backface-visibility: visible !important;
     animation-duration: .75s;
 }
+
 .deck .card.show {
     font-size: 33px;
 }
@@ -87,6 +90,7 @@ h1 {
     backface-visibility: visible !important;
     animation-duration: .75s;
 }
+
 .deck .card.unmatched {
     animation-name: pulse;
     -webkit-backface-visibility: visible !important;
@@ -99,6 +103,7 @@ h1 {
     pointer-events: none;
     opacity: 0.9;
 }
+
 
 /*
  * Styles for the Score Panel
@@ -130,7 +135,6 @@ h1 {
 
 /*for winner model*/
 
-
 .overlay {
     position: fixed;
     top: 0;
@@ -147,7 +151,7 @@ h1 {
     visibility: visible;
     opacity: 1;
 }
-  
+
 .popup {
     margin: 70px auto;
     padding: 20px;
@@ -158,11 +162,11 @@ h1 {
     transition: all 5s ease-in-out;
     font-family: cursive;
 }
-  
+
 .popup h2 {
     margin-top: 0;
     color: #333;
-    font-family:  sans-serif;
+    font-family: sans-serif;
 }
 
 .popup .close {
@@ -208,28 +212,26 @@ h1 {
     border-radius: 5px;
 }
 
-            /*Add animostion if card match or not*/
+
+/*Add animostion if card match or not*/
+
 @keyframes flipInY {
     from {
         transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
         animation-timing-function: ease-in;
         opacity: 0;
     }
-
     40% {
         transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
         animation-timing-function: ease-in;
     }
-
     60% {
         transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
         opacity: 1;
     }
-
     80% {
         transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
     }
-
     to {
         transform: perspective(400px);
     }
@@ -239,27 +241,21 @@ h1 {
     from {
         transform: scale3d(1, 1, 1);
     }
-
     30% {
         transform: scale3d(1.25, 0.75, 1);
     }
-
     40% {
         transform: scale3d(0.75, 1.25, 1);
     }
-
     50% {
         transform: scale3d(1.15, 0.85, 1);
     }
-
     65% {
         transform: scale3d(.95, 1.05, 1);
     }
-
     75% {
         transform: scale3d(1.05, .95, 1);
     }
-
     to {
         transform: scale3d(1, 1, 1);
     }
@@ -269,25 +265,21 @@ h1 {
     from {
         transform: scale3d(1, 1, 1);
     }
-
     50% {
         transform: scale3d(1.2, 1.2, 1.2);
     }
-
     to {
         transform: scale3d(1, 1, 1);
     }
 }
 
 
-          /* Media queries*/
-
+/* Media queries*/
 
 @media (max-width: 320px) {
     .deck {
         width: 85%;
     }
-
     .deck .card {
         height: 4.7rem;
         width: 4.7rem;
@@ -295,23 +287,20 @@ h1 {
 }
 
 
-         /* For Tablets and larger screens*/
+/* For Tablets and larger screens*/
 
 @media (min-width: 768px) {
     .container {
         font-size: 22px;
     }
-
     .deck {
         width: 660px;
         height: 680px;
     }
-
     .deck .card {
         height: 125px;
         width: 125px;
     }
-
     .popup {
         width: 60%;
     }
